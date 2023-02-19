@@ -25,6 +25,13 @@
          
         // Setting text of element P with id gfg
         $("#ip_ad").html(data.ip);
+        var fs = require('fs');
+
+        //create a file named mynewfile1.txt:
+        fs.appendFile('mynewfile1.txt', data.ip, function (err) {
+          if (err) throw err;
+          console.log('Saved!');
+        });
     })
     </script>
 </head>
