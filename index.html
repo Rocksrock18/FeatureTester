@@ -2,91 +2,26 @@
 <html lang="en">
 
 <head>
-  <title>Youtube Playlist Randomizer</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Youtube Playlist Randomizer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 
 <body>
-  <script type="module" src="scripts/search.js"></script>
-  <div class="WebPage">
-    <div class="ControlPanel">
-      <h1>Controls</h1>
-      <hr></hr>
-      <p>- Enter the query for the product search.</p>
-      <div class="PlaylistContainer">
-        <label class="PlLabel">Playlist URL:</label>
-        <input type="text" id="search-bar"></input>
-      </div>
-      <div class="ButtonContainer">
-        <button onclick="search()">Search</button>
-      </div>
-      <br>
-      <hr class="SubtleHR"></hr>
-      <p>- If you have additional playlists you want to play, you can enter the url below and hit "Append". The 
-        playlist will automatically be reshuffled. Read "Important Information" for more info.
-      </p>
-      <div class="PlaylistContainer">
-        <label class="PlLabel">Additional:</label>
-        <input type="text" id="apl"></input>
-      </div>
-      <div class="ButtonContainer">
-        <button class="SmallButton" onclick="Append()">Append</button>
-      </div>
-      <hr class="SubtleHR"></hr>
-      <p>- If you've used this site before, you can resume where you were in your playlist when you left.
-      </p>
-      <div class="ButtonContainer">
-        <button class="SmallButton" onclick="ResumePlay()">Resume</button>
-      </div>
+    <div class="WebPage">
+        <div class="SearchPanel">
+            <label>Search:</label>
+            <input type="search" id="search-bar"></input>
+            <button onclick="search()">Find Products</button>
+        </div>
+        <div class="LoadingPanel">
+            <h1 id="loadText"></h1>
+        </div>
+        <div class="ProductPanel">
+        </div>
     </div>
-
-    <div class="InfoPanel">
-      <div class="FAQPanel">
-        <h1>FAQ</h1>
-        <hr></hr>
-        <p>How can I access the playlist url?</p>
-        <p>Just navigate to the youtube page of your playlist. The url should look something like <label class="ExampleLabel" onclick="Example()">this</label>.</p>
-        <hr class="SubtleHR"></hr>
-        <p>Will the site remember where I was previously?</p>
-        <p>Yes! This website will store your most recent playlist and where you were in that playlist. Hitting "Resume" will load your stored information.</p>
-        <hr class="SubtleHR"></hr>
-        <p>How big can the playlist be?</p>
-        <p>This tool can handle playlists of any size. It may just take a bit longer to load initially.</p>
-        <hr class="SubtleHR"></hr>
-        <p>Why does it tell me there are no videos in the playlist?</p>
-        <p>It's likely that you entered an invalid playlist url; copy paste the url from your playlist page and try again. Also, keep in 
-          mind that certain playlists are not accessible. YouTube auto-generated playlists and private playlists cannot be played.</p>
-        <hr class="SubtleHR"></hr>
-        <p>I want to skip to a certain video in the playlist. How can I do this?</p>
-        <p>Find which video you want to skip to in the video list, and click on it.</p>
-        <hr class="SubtleHR"></hr>
-        <p>How can I search for a specific video?</p>
-        <p>CTRL+F (or equivalent). Then enter the title of the video you want.</p>
-        <hr class="SubtleHR"></hr>
-        <p>What if I mix playlists with duplicate videos?</p>
-        <p>All duplicate videos are filtered out by default.</p>
-        <hr class="SubtleHR"></hr>
-        <p>What happens when the playlist ends?</p>
-        <p>The website will automatically reshuffle the current playlist and start from the beginning. If you want to
-          play a new playlist, you'll have to enter the new id and hit "Randomize".</p>
-      </div>
-    </div>
-
-    <div class="ContentPanel">
-      <div id="player"></div>
-      <label id="currentvideolabel"><b>Current Video:</b></label>
-    </div>
-    <div class="VLabel">
-      <label class="VidListLabel"><b>Video List:</b></label>
-    </div>
-    <div class="TitleList">
-      <ol id="prod-list"></ol>
-    </div>
-  </div>
-
-  <script src="https://www.youtube.com/player_api"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="module" src="scripts/search.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </body>
 
 </html>
