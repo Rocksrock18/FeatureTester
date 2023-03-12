@@ -24,6 +24,8 @@ function resetProductPanel()
 
     var newPanel = document.createElement("div")
     newPanel.setAttribute("class", "ProductPanel")
+    
+    document.body.appendChild(newPanel)
 }
 
 function getProductInfo(products)
