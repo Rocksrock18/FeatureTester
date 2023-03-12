@@ -53,6 +53,10 @@ function populateProduct(productInfo)
 
     var p = document.getElementById(productInfo["product_id"]+'-p')
     p.innerText = "Title: " + productInfo["product_name"] + "\nOriginal Score: " + productInfo["original_rating"] + "\nScout Score: " + productInfo["scout_rating"] + "\nCategory: " + productInfo["score_category"]
+    
+    var a = document.getElementById(productInfo["product_id"]+'-a')
+    a.title = "Go to product page"
+    a.href = "https://www.amazon.com/dp/" + productInfo["product_id"]
 }
 
 function initializeProductList(products)
@@ -70,8 +74,15 @@ function initializeProductList(products)
         var p = document.createElement("p")
         p.setAttribute('id', products[i]+'-p')
 
+        var a = document.createElement("a")
+        a.setAttribute('id', products[i]+'-a')
+
+        var hr = document.createElement("hr")
+
         div.appendChild(img);
         div.appendChild(p);
+        div.appendChild(a);
+        div.appendChild(hr);
         prodPanel.appendChild(div);
     }
 }
