@@ -16,7 +16,7 @@ export function search()
     });
 }
 
-function getProductInfo(productList)
+function getProductInfo(products)
 {
     modifyLoadingPanel("2) Products found, running analysis...")
     for(var i = 0; i < products.length; i++)
