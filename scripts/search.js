@@ -25,3 +25,5 @@ function initializeProductList(products)
         ol.appendChild(li);
     }
 }
+
+window.search = search;
