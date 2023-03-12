@@ -6,7 +6,7 @@ export function search()
         type: 'GET',
         url: link,
         success: function(data){
-            initializeProductList(products)
+            initializeProductList(data)
         },
         error: function () {
             alert("The connection to the server failed. Check permissions and try again.");
