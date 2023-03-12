@@ -1,5 +1,6 @@
 export function search()
 {
+    resetProductPanel()
     modifyLoadingPanel("1) Searching for products...")
     var query = document.getElementById('search-bar').value;
     var link = 'https://74k4v7u3g3u4pbd362visxgvwu0eowzx.lambda-url.us-east-1.on.aws/?search_string='+query;
@@ -14,6 +15,15 @@ export function search()
             alert("The connection to the server failed. Check permissions and try again.");
         }
     });
+}
+
+function resetProductPanel()
+{
+    var panel = document.getElementsByClassName("ProductPanel")[0]
+    panel.remove()
+
+    var newPanel = document.createElement("div")
+    newPanel.setAttribute("class", "ProductPanel")
 }
 
 function getProductInfo(products)
@@ -55,6 +65,7 @@ function populateProduct(productInfo)
     p.innerText = "Title: " + productInfo["product_name"] + "\nOriginal Score: " + productInfo["original_rating"] + "\nScout Score: " + productInfo["scout_rating"] + "\nCategory: " + productInfo["score_category"]
     
     var a = document.getElementById(productInfo["product_id"]+'-a')
+    a.appendChild(document.createTextNode("Go to product page"))
     a.title = "Go to product page"
     a.href = "https://www.amazon.com/dp/" + productInfo["product_id"]
 }
